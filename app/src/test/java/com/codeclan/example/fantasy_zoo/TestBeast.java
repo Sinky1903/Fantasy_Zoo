@@ -15,13 +15,14 @@ public class TestBeast {
     Unicorn unicorn;
     Werewolf werewolf;
     Legomen legomen;
+    Apple apple;
 
 
     @Before
     public void before() {
 
         dragon = new Dragon("Bob", 200);
-        unicorn = new Unicorn();
+        unicorn = new Unicorn("Yolanda", 8);
         werewolf = new Werewolf();
     }
 
@@ -44,6 +45,27 @@ public class TestBeast {
     public void testDragonCanEat() {
         dragon.eat(legomen);
         assertEquals(1, dragon.checkBelly());
+    }
+
+    @Test
+    public void testGetUnicornName() {
+        assertEquals("Yolanda", unicorn.getName());
+    }
+
+    @Test
+    public void testGetUnicornAge() {
+        assertEquals(8, unicorn.getAge());
+    }
+
+    @Test
+    public void testUnicornBellyEmpty() {
+        assertEquals(0, unicorn.checkBelly());
+    }
+
+    @Test
+    public void testUnicornCanEat() {
+        unicorn.eat(apple);
+        assertEquals(1, unicorn.checkBelly());
     }
 
 
