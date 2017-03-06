@@ -7,9 +7,7 @@ import java.util.ArrayList;
  */
 
 public class Unicorn extends Beast {
-    
-    private String name;
-    private int age;
+
     private ArrayList<Edible> belly;
     
     public Unicorn(String name, int age) {

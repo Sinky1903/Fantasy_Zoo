@@ -12,29 +12,9 @@ public class Enclosure {
     private ArrayList<Beast> beasts;
 
     public Enclosure (String name) {
-        Enclosure enclosure = new Enclosure("Flying Squad");
+//        Enclosure enclosure = new Enclosure("Flying Squad");
         this.name = name;
         this.beasts = new ArrayList<Beast>();
-        addBeasts();
-    }
-
-    private void addBeasts() {
-        beasts.add(new Dragon("Bob", 201) {
-            @Override
-            public String breath() {
-                return null;
-            }
-
-            @Override
-            public String eat() {
-                return null;
-            }
-
-            @Override
-            public String sleep() {
-                return null;
-            }
-        });
     }
 
 
@@ -44,5 +24,9 @@ public class Enclosure {
 
     public int checkEnclosure() {
         return beasts.size();
+    }
+
+    public void addBeastToEnclosure(Beast b) {
+        this.beasts.add(b);
     }
 }

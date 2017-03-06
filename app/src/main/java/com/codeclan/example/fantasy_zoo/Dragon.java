@@ -8,13 +8,11 @@ import java.util.ArrayList;
 
 public class Dragon extends Beast {
 
-    private String name;
-    private int age;
+
     private ArrayList<Edible> belly;
 
     public Dragon(String name, int age) {
         super("Bob", 201);
-//        Dragon dragon = new Dragon("Bob", 201);
         this.name = name;
         this.age = age;
         this.belly = new ArrayList<Edible>();

@@ -10,17 +10,16 @@ public abstract class Beast {
 
     public int age;
 
-    public abstract String breath();
-
-    public abstract String eat();
-
-    public abstract String sleep();
+//    public abstract String breath();
+//
+//    public abstract String eat();
+//
+//    public abstract String sleep();
 
 
     public Beast(String name, int age) {
         this.name = name;
         this.age = age;
-
     }
 }
 

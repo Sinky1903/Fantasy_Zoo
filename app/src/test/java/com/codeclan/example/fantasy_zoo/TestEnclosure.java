@@ -35,8 +35,11 @@ public class TestEnclosure {
     }
 
     @Test
-    public void testAddToEnclosure() {
-        beasts.add();
+    public void testAddToEnclosure2(){
+        int originalLength = enclosure.checkEnclosure();
+        enclosure.addBeastToEnclosure(dragon);
+        enclosure.addBeastToEnclosure((unicorn));
+        assertEquals(originalLength + 2, enclosure.checkEnclosure());
     }
 
 }
