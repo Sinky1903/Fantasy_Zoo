@@ -8,9 +8,9 @@ import static org.junit.Assert.assertEquals;
  * Created by user on 06/03/2017.
  */
 
-public class TestUnicorn {
+public class TestDragon {
 
-    Unicorn unicorn;
+    Dragon dragon;
     Apple apple;
     Legomen legomen;
 

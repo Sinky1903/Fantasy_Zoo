@@ -24,6 +24,8 @@ public class TestBeast {
         dragon = new Dragon("Bob", 200);
         unicorn = new Unicorn("Yolanda", 8);
         werewolf = new Werewolf();
+        legomen = new Legomen();
+        apple = new Apple();
     }
 
     @Test
@@ -34,6 +36,16 @@ public class TestBeast {
     @Test
     public void testGetDragonAge() {
         assertEquals(200, dragon.getAge());
+    }
+
+    @Test
+    public void testDragonCanBreath(){
+        assertEquals("woooooosa", dragon.breath());
+    }
+
+    @Test
+    public void testDragonCanSleep() {
+        assertEquals("zzzzzz", dragon.sleep());
     }
 
     @Test
@@ -48,6 +60,12 @@ public class TestBeast {
     }
 
     @Test
+    public void testDragonCantEatApple() {
+        dragon.eat(apple);
+        assertEquals(0, dragon.checkBelly());
+    }
+
+    @Test
     public void testGetUnicornName() {
         assertEquals("Yolanda", unicorn.getName());
     }
@@ -55,6 +73,16 @@ public class TestBeast {
     @Test
     public void testGetUnicornAge() {
         assertEquals(8, unicorn.getAge());
+    }
+
+    @Test
+    public void testUnicornCanBreath(){
+        assertEquals("woooooosa", unicorn.breath());
+    }
+
+    @Test
+    public void testUnicornCanSleep() {
+        assertEquals("zzzzzz", unicorn.sleep());
     }
 
     @Test
@@ -69,14 +97,18 @@ public class TestBeast {
     }
 
     @Test
-    public void testUnicornCanBreath(){
-
-        assertEquals("woooooosa", unicorn.breath());
+    public void testCantEatLegomen() {
+        unicorn.eat(legomen);
+        assertEquals(0, unicorn.checkBelly());
     }
 
+    @Test
+    public void testDragonCanFly() {
+        assertEquals("My big wings make me fly!", dragon.fly());
+    }
 
-
-//    @Test
-//    public void testDragonCanFly() {
-//    }
+    @Test
+    public void testUnicornCanFly() {
+        assertEquals("My magical horn makes me flyyyyyyyy!", unicorn.fly());
+    }
 }

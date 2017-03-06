@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 public class Enclosure {
 
-    private String name;
-    private ArrayList<Beast> beasts;
+    public String name;
+    protected ArrayList<Beast> beasts;
+
 
     public Enclosure (String name) {
-//        Enclosure enclosure = new Enclosure("Flying Squad");
         this.name = name;
         this.beasts = new ArrayList<Beast>();
     }
@@ -28,5 +28,11 @@ public class Enclosure {
 
     public void addBeastToEnclosure(Beast b) {
         this.beasts.add(b);
+    }
+
+    public void feedanimals(Edible food) {
+        for (Beast beast : beasts) {
+            beast.eat(food);
+        }
     }
 }

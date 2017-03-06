@@ -17,9 +17,9 @@ public class Zoo {
     }
 
     public String getName() {
+        System.out.println(name);
         return this.name;
     }
-
 
     public int checkEnclosures() {
         return enclosures.size();

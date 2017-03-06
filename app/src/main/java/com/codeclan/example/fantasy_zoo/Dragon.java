@@ -1,33 +1,21 @@
 package com.codeclan.example.fantasy_zoo;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 /**
  * Created by user on 03/03/2017.
  */
 
-public class Dragon extends Beast {
+public class Dragon extends Beast implements Flyable{
 
 
-//    private ArrayList<Edible> belly;
 
     public Dragon(String name, int age) {
         super("Bob", 201);
         this.name = name;
         this.age = age;
         this.belly = new ArrayList<Edible>();
-    }
-
-    public String breath() {
-        return "woooooosa";
-    }
-
-//    public void eat() {
-//        return "nom nom nom";
-//    }
-
-    public String sleep() {
-        return "zzzzzzz";
     }
 
     public String getName() {
@@ -44,17 +32,17 @@ public class Dragon extends Beast {
 
     @Override
     public void eat(Edible food) {
-        if(food instanceof Legomen || food instanceof Apple) {
+        if(food instanceof Legomen) {
             belly.add(food);
+            System.out.println("oh yes my fave!");
         }else{
-            System.out.println("Can't eat this");
+            System.out.println("Give me proper food FFS!");
         }
     }
 
-
-//    public String fly() {
-//        return "";
-//    }
+    public String fly() {
+        return "My big wings make me fly!";
+    }
 
 
 }

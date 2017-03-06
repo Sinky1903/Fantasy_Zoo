@@ -12,6 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class TestEnclosure {
 
     Dragon dragon;
+    Dragon dragon2;
     Unicorn unicorn;
     Enclosure enclosure;
 
@@ -19,9 +20,10 @@ public class TestEnclosure {
     @Before
     public void before() {
 
-        enclosure = new Enclosure("Flying Squad");
         dragon = new Dragon("Bob", 201);
+        dragon2 = new Dragon("jeffrey", 402);
         unicorn = new Unicorn("Yolanda", 8);
+        enclosure = new Enclosure("Flying Squad");
     }
 
     @Test
@@ -41,5 +43,22 @@ public class TestEnclosure {
         enclosure.addBeastToEnclosure((unicorn));
         assertEquals(originalLength + 2, enclosure.checkEnclosure());
     }
+
+    @Test
+    public void testCanFeedAnimals() {
+        Legomen legomen = new Legomen();
+        enclosure.addBeastToEnclosure(dragon);
+        enclosure.addBeastToEnclosure(dragon2);
+        enclosure.addBeastToEnclosure(unicorn);
+        enclosure.feedanimals(legomen);
+        assertEquals(1, dragon.checkBelly());
+        assertEquals(1, dragon2.checkBelly());
+        assertEquals(0, unicorn.checkBelly());
+    }
+
+//    @Test
+//    public void testFlyingEnclosureCanAddDragonOrUnicorn() {
+//
+//    }
 
 }

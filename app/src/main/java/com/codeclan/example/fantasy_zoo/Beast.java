@@ -18,8 +18,9 @@ public abstract class Beast {
         return "woooooosa";
     }
 
-    public abstract String sleep();
-
+    public String sleep() {
+        return "zzzzzz";
+    }
 
     public Beast(String name, int age) {
         this.name = name;
