@@ -7,8 +7,7 @@ import java.util.ArrayList;
  * Created by user on 03/03/2017.
  */
 
-public class Dragon extends Beast implements Flyable{
-
+public class Dragon extends Beast{
 
 
     public Dragon(String name, int age) {

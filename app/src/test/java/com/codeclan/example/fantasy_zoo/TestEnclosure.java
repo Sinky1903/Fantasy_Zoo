@@ -14,7 +14,10 @@ public class TestEnclosure {
     Dragon dragon;
     Dragon dragon2;
     Unicorn unicorn;
-    Enclosure enclosure;
+    Werewolf werewolf;
+    Werewolf werewolf2;
+    FlyingEnclosure flyingenclosure;
+    NonFlyingEnclosure nonFlyingEnclosure;
 
 
     @Before
@@ -23,34 +26,45 @@ public class TestEnclosure {
         dragon = new Dragon("Bob", 201);
         dragon2 = new Dragon("jeffrey", 402);
         unicorn = new Unicorn("Yolanda", 8);
-        enclosure = new Enclosure("Flying Squad");
+        werewolf = new Werewolf("Scott Howard", 17);
+        werewolf2 = new Werewolf("Michael Corvin", 28);
+        flyingenclosure = new FlyingEnclosure("Flying Squad");
+        nonFlyingEnclosure = new NonFlyingEnclosure("Hairy Bikers");
+
     }
 
     @Test
-    public void testGetName() {
-        assertEquals("Flying Squad", enclosure.getName());
+    public void testGetFlyingEnclosureName() {
+        assertEquals("Flying Squad", flyingenclosure.getName());
     }
 
     @Test
-    public void testEnclosureEmpty() {
-        assertEquals(0, enclosure.checkEnclosure());
+    public void testFlyingEnclosureEmpty() {
+        assertEquals(0, flyingenclosure.checkEnclosure());
     }
 
     @Test
-    public void testAddToEnclosure(){
-        int originalLength = enclosure.checkEnclosure();
-        enclosure.addBeastToEnclosure(dragon);
-        enclosure.addBeastToEnclosure((unicorn));
-        assertEquals(originalLength + 2, enclosure.checkEnclosure());
+    public void testAddToFlyingEnclosure() {
+        flyingenclosure.addBeastToEnclosure(dragon);
+        assertEquals(1, flyingenclosure.checkEnclosure());
     }
 
+//    @Test
+//    public void testAddToFlyingEnclosure2(){
+//        int originalLength = flyingenclosure.checkEnclosure();
+//        flyingenclosure.addFlyingBeastToEnclosure(dragon);
+//        flyingenclosure.addFlyingBeastToEnclosure(unicorn);
+//        assertEquals(originalLength + 2, flyingenclosure.checkEnclosure());
+//    }
+
     @Test
-    public void testCanFeedAnimals() {
+    public void testCanFeedFlyingAnimals() {
         Legomen legomen = new Legomen();
-        enclosure.addBeastToEnclosure(dragon);
-        enclosure.addBeastToEnclosure(dragon2);
-        enclosure.addBeastToEnclosure(unicorn);
-        enclosure.feedanimals(legomen);
+        flyingenclosure.addBeastToEnclosure(dragon);
+        flyingenclosure.addBeastToEnclosure(dragon2);
+        flyingenclosure.addBeastToEnclosure(unicorn);
+        flyingenclosure.addBeastToEnclosure(werewolf);
+        flyingenclosure.feedanimals(legomen);
         assertEquals(1, dragon.checkBelly());
         assertEquals(1, dragon2.checkBelly());
         assertEquals(0, unicorn.checkBelly());
@@ -60,5 +74,34 @@ public class TestEnclosure {
 //    public void testFlyingEnclosureCanAddDragonOrUnicorn() {
 //
 //    }
+
+    @Test
+    public void testGetNonFlyingEnclosureName() {
+        assertEquals("Hairy Bikers", nonFlyingEnclosure.getName());
+    }
+
+    @Test
+    public void testNonFlyingEnclosureEmpty() {
+        assertEquals(0, nonFlyingEnclosure.checkEnclosure());
+    }
+
+    @Test
+    public void testAddToNonFlyingEnclosure() {
+        nonFlyingEnclosure.addBeastToEnclosure(werewolf);
+        assertEquals(1, nonFlyingEnclosure.checkEnclosure());
+    }
+
+    @Test
+    public void testCanFeedNonFlyingAnimals() {
+        Legomen legomen = new Legomen();
+        Heart heart = new Heart();
+        nonFlyingEnclosure.addBeastToEnclosure(werewolf);
+        nonFlyingEnclosure.addBeastToEnclosure(werewolf2);
+        nonFlyingEnclosure.feedanimals(legomen);
+        nonFlyingEnclosure.feedanimals(heart);
+
+        assertEquals(1, werewolf.checkBelly());
+        assertEquals(1, werewolf2.checkBelly());
+    }
 
 }

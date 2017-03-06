@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by user on 03/03/2017.
  */
 
-public class Unicorn extends Beast implements Flyable{
+public class Unicorn extends Beast{
 
     
     public Unicorn(String name, int age) {
@@ -34,7 +34,7 @@ public class Unicorn extends Beast implements Flyable{
             belly.add(food);
             System.out.println("yummers");
         }else{
-            System.out.println("I wont't eat this");
+            System.out.println("I won't eat this");
         }
     }
 

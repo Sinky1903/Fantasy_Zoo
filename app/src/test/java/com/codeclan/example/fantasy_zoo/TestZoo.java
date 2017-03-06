@@ -17,7 +17,7 @@ public class TestZoo {
     @Before
     public void before() {
 
-        enclosure = new Enclosure("Flying Squad");
+//        enclosure = new Enclosure("Flying Squad");
         zoo = new Zoo("Zoo");
     }
 

@@ -14,6 +14,7 @@ public abstract class Beast {
 
     protected ArrayList<Edible> belly;
 
+
     public String breath() {
         return "woooooosa";
     }

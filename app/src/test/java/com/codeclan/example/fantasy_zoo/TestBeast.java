@@ -16,6 +16,7 @@ public class TestBeast {
     Werewolf werewolf;
     Legomen legomen;
     Apple apple;
+    Heart heart;
 
 
     @Before
@@ -23,9 +24,10 @@ public class TestBeast {
 
         dragon = new Dragon("Bob", 200);
         unicorn = new Unicorn("Yolanda", 8);
-        werewolf = new Werewolf();
+        werewolf = new Werewolf("Scott Howard", 17);
         legomen = new Legomen();
         apple = new Apple();
+        heart = new Heart();
     }
 
     @Test
@@ -54,7 +56,7 @@ public class TestBeast {
     }
 
     @Test
-    public void testDragonCanEat() {
+    public void testDragonCanEatLegomen() {
         dragon.eat(legomen);
         assertEquals(1, dragon.checkBelly());
     }
@@ -63,6 +65,11 @@ public class TestBeast {
     public void testDragonCantEatApple() {
         dragon.eat(apple);
         assertEquals(0, dragon.checkBelly());
+    }
+
+    @Test
+    public void testDragonCanFly() {
+        assertEquals("My big wings make me fly!", dragon.fly());
     }
 
     @Test
@@ -91,24 +98,57 @@ public class TestBeast {
     }
 
     @Test
-    public void testUnicornCanEat() {
+    public void testUnicornCanEatApple() {
         unicorn.eat(apple);
         assertEquals(1, unicorn.checkBelly());
     }
 
     @Test
-    public void testCantEatLegomen() {
+    public void testUnicornCantEatLegomen() {
         unicorn.eat(legomen);
         assertEquals(0, unicorn.checkBelly());
-    }
-
-    @Test
-    public void testDragonCanFly() {
-        assertEquals("My big wings make me fly!", dragon.fly());
     }
 
     @Test
     public void testUnicornCanFly() {
         assertEquals("My magical horn makes me flyyyyyyyy!", unicorn.fly());
     }
+
+    @Test
+    public void testGetWerewolfName() {
+        assertEquals("Scott Howard", werewolf.getName());
+    }
+
+    @Test
+    public void testGetWerewolfAge() {
+        assertEquals(17, werewolf.getAge());
+    }
+
+    @Test
+    public void testWerewolfCanBreath(){
+        assertEquals("woooooosa", werewolf.breath());
+    }
+
+    @Test
+    public void testWerewolfCanSleep() {
+        assertEquals("zzzzzz", werewolf.sleep());
+    }
+
+    @Test
+    public void testWerewolfBellyEmpty() {
+        assertEquals(0, werewolf.checkBelly());
+    }
+
+    @Test
+    public void testWerewolfCanEatHeart() {
+        werewolf.eat(heart);
+        assertEquals(1, werewolf.checkBelly());
+    }
+
+    @Test
+    public void testWerewolfCantEatLegomen() {
+        werewolf.eat(legomen);
+        assertEquals(0, werewolf.checkBelly());
+    }
+
 }
