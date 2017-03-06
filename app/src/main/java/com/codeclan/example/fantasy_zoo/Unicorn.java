@@ -17,9 +17,9 @@ public class Unicorn extends Beast {
         this.belly = new ArrayList<Edible>();
     }
 
-    public String breath() {
-        return "hhhhmmmmmmm";
-    }
+//    public String breath() {
+//        return "hhhhmmmmmmm";
+//    }
 
     public String eat() {
         return "yummmmmmmie";

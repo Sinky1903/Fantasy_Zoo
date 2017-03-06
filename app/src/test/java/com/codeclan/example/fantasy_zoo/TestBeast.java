@@ -68,6 +68,12 @@ public class TestBeast {
         assertEquals(1, unicorn.checkBelly());
     }
 
+    @Test
+    public void testUnicornCanBreath(){
+
+        assertEquals("woooooosa", unicorn.breath());
+    }
+
 
 
 //    @Test

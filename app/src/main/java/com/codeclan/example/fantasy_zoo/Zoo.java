@@ -24,4 +24,8 @@ public class Zoo {
     public int checkEnclosures() {
         return enclosures.size();
     }
+
+    public void addEnclosureToZoo(Enclosure e) {
+        this.enclosures.add(e);
+    }
 }

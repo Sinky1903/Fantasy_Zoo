@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Dragon extends Beast {
 
 
-    private ArrayList<Edible> belly;
+//    private ArrayList<Edible> belly;
 
     public Dragon(String name, int age) {
         super("Bob", 201);
@@ -22,9 +22,9 @@ public class Dragon extends Beast {
         return "woooooosa";
     }
 
-    public String eat() {
-        return "nom nom nom";
-    }
+//    public void eat() {
+//        return "nom nom nom";
+//    }
 
     public String sleep() {
         return "zzzzzzz";
@@ -42,8 +42,13 @@ public class Dragon extends Beast {
        return belly.size();
     }
 
+    @Override
     public void eat(Edible food) {
-        belly.add(food);
+        if(food instanceof Legomen || food instanceof Apple) {
+            belly.add(food);
+        }else{
+            System.out.println("Can't eat this");
+        }
     }
 
 

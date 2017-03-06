@@ -33,6 +33,7 @@ public class TestZoo {
 
     @Test
     public void testEnclosureAdded() {
-
+        zoo.addEnclosureToZoo(enclosure);
+        assertEquals(1, zoo.checkEnclosures());
     }
 }

@@ -35,7 +35,7 @@ public class TestEnclosure {
     }
 
     @Test
-    public void testAddToEnclosure2(){
+    public void testAddToEnclosure(){
         int originalLength = enclosure.checkEnclosure();
         enclosure.addBeastToEnclosure(dragon);
         enclosure.addBeastToEnclosure((unicorn));
