@@ -12,13 +12,8 @@ public class FlyingEnclosure extends Enclosure {
     Unicorn unicorn;
 
     public FlyingEnclosure(String name) {
-        super("Flying Enclosure");
-        this.name = name;
+        super("Flying Squad");
         this.beasts = new ArrayList<Beast>();
-    }
-
-    public String getName() {
-        return name;
     }
 
 //    public int checkEnclosure() {

@@ -6,20 +6,11 @@ import java.util.ArrayList;
  * Created by user on 07/03/2017.
  */
 
-public class Sasquatch extends Beast {
+public class Sasquatch extends Beast implements Hairyable {
 
     public Sasquatch (String name, int age) {
         super("Chewbacca", 98);
-        this.name = name;
-        this.age = age;
         this.belly = new ArrayList<Edible>();
-    }
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public int checkBelly() {

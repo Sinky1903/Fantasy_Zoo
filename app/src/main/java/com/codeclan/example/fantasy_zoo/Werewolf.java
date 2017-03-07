@@ -6,20 +6,11 @@ import java.util.ArrayList;
  * Created by user on 03/03/2017.
  */
 
-public class Werewolf extends Beast {
+public class Werewolf extends Beast implements Hairyable {
 
     public Werewolf (String name, int age) {
         super("Scott Howard", 17);
-        this.name = name;
-        this.age = age;
         this.belly = new ArrayList<Edible>();
-    }
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public int checkBelly() {

@@ -8,21 +8,20 @@ import java.util.ArrayList;
 
 public abstract class Enclosure {
 
-    public String name;
+    private String name;
 
     protected ArrayList<Beast> beasts;
 
-
+    public abstract void addBeastToEnclosure(Beast b);
+//        this.beasts.add(b);
+    
+    
     public Enclosure (String name) {
         this.name = name;
     }
 
     public int checkEnclosure() {
         return beasts.size();
-    }
-
-    public void addBeastToEnclosure(Beast b) {
-        this.beasts.add(b);
     }
 
     public void removeBeastFromEnclosure(Beast b) {
@@ -33,5 +32,9 @@ public abstract class Enclosure {
         for (Beast beast : beasts) {
             beast.eat(food);
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

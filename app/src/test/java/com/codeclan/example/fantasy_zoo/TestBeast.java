@@ -24,11 +24,12 @@ public class TestBeast {
     @Before
     public void before() {
 
-        dragon = new Dragon("Bob", 200);
+        dragon = new Dragon("Bob", 201);
         unicorn = new Unicorn("Yolanda", 8);
         werewolf = new Werewolf("Scott Howard", 17);
         sasquatch = new Sasquatch("Chewbacca", 98);
         legomen = new Legomen();
+        chicken = new Chicken();
         apple = new Apple();
         heart = new Heart();
     }
@@ -41,7 +42,7 @@ public class TestBeast {
 
     @Test
     public void testGetDragonAge() {
-        assertEquals(200, dragon.getAge());
+        assertEquals(201, dragon.getAge());
     }
 
     @Test

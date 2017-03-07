@@ -10,12 +10,7 @@ public class NonFlyingEnclosure extends Enclosure {
 
     public NonFlyingEnclosure(String name) {
         super("Hairy Bikers");
-        this.name = name;
         this.beasts = new ArrayList<Beast>();
-    }
-
-    public String getName() {
-        return name;
     }
 
 //    public int checkEnclosure() {
@@ -24,7 +19,8 @@ public class NonFlyingEnclosure extends Enclosure {
 
     @Override
     public void addBeastToEnclosure(Beast b) {
-        if(b instanceof Werewolf) {
+        boolean isHairy = b instanceof Hairyable;
+        if(isHairy) {
             beasts.add(b);
             System.out.println("Hunt Away!");
         }else{

@@ -8,12 +8,26 @@ import java.util.ArrayList;
 
 public abstract class Beast {
 
-    public String name;
+    private String name;
 
-    public int age;
+    private int age;
 
     protected ArrayList<Edible> belly;
 
+    public abstract void eat(Edible food);
+
+    public Beast(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
 
     public String breath() {
         return "woooooosa";
@@ -23,14 +37,7 @@ public abstract class Beast {
         return "zzzzzz";
     }
 
-    public Beast(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 
-    public void eat(Edible food) {
-        belly.add(food);
-    }
 }
 
 

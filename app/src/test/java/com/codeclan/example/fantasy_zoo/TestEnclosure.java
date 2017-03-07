@@ -68,6 +68,7 @@ public class TestEnclosure {
         assertEquals(1, dragon.checkBelly());
         assertEquals(1, dragon2.checkBelly());
         assertEquals(0, unicorn.checkBelly());
+        assertEquals(0, werewolf.checkBelly());
     }
 
 //    ///////////////
@@ -93,21 +94,46 @@ public class TestEnclosure {
         assertEquals(0, nonFlyingEnclosure.checkEnclosure());
     }
 
+//    @Test
+//    public void testCanFeedNonFlyingAnimals() {
+//        Legomen legomen = new Legomen();
+//        Heart heart = new Heart();
+//        Chicken chicken = new Chicken();
+//        Apple apple = new Apple();
+//        nonFlyingEnclosure.addBeastToEnclosure(werewolf);
+//        nonFlyingEnclosure.addBeastToEnclosure(werewolf2);
+//        nonFlyingEnclosure.addBeastToEnclosure(sasquatch);
+//        nonFlyingEnclosure.feedAnimals(legomen);
+//
+//        nonFlyingEnclosure.feedAnimals(chicken);
+//        nonFlyingEnclosure.feedAnimals(apple);
+//        nonFlyingEnclosure.feedAnimals(heart);
+//
+//        assertEquals(1, werewolf.checkBelly());
+//        assertEquals(1, werewolf2.checkBelly());
+//        assertEquals(1, sasquatch.checkBelly());
+//    }
+
     @Test
-    public void testCanFeedNonFlyingAnimals() {
-        Legomen legomen = new Legomen();
-        Heart heart = new Heart();
+    public void testCanFeedAnimals() {
         Chicken chicken = new Chicken();
         nonFlyingEnclosure.addBeastToEnclosure(werewolf);
-        nonFlyingEnclosure.addBeastToEnclosure(werewolf2);
         nonFlyingEnclosure.addBeastToEnclosure(sasquatch);
-        nonFlyingEnclosure.feedAnimals(legomen);
-        nonFlyingEnclosure.feedAnimals(heart);
         nonFlyingEnclosure.feedAnimals(chicken);
-
-        assertEquals(1, werewolf.checkBelly());
-        assertEquals(1, werewolf2.checkBelly());
+        assertEquals(0, werewolf.checkBelly());
         assertEquals(1, sasquatch.checkBelly());
     }
+
+//    ////////////
+
+    @Test
+    public void testDragonAttackUnicorn() {
+        unicorn.fart();
+        dragon.attackUnicorn();
+        unicorn.fly();
+        dragon.fly();
+        dragon.eatUnicorn(unicorn);
+    }
+
 
 }

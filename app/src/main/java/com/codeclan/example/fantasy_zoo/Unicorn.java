@@ -11,17 +11,7 @@ public class Unicorn extends Beast implements Flyable, Edible{
     
     public Unicorn(String name, int age) {
         super("Yolanda", 8);
-        this.name = name;
-        this.age = age;
         this.belly = new ArrayList<Edible>();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public int checkBelly() {
@@ -40,5 +30,9 @@ public class Unicorn extends Beast implements Flyable, Edible{
 
     public String fly() {
         return "My magical horn makes me flyyyyyyyy!";
+    }
+
+    public String fart() {
+        return "RAINBOW FART";
     }
 }

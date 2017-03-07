@@ -12,17 +12,7 @@ public class Dragon extends Beast implements Flyable{
 
     public Dragon(String name, int age) {
         super("Bob", 201);
-        this.name = name;
-        this.age = age;
         this.belly = new ArrayList<Edible>();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public int checkBelly() {
@@ -39,9 +29,16 @@ public class Dragon extends Beast implements Flyable{
         }
     }
 
+    public String attackUnicorn() {
+        return ("Attack pesky Unicorn!!");
+    }
+
     public String fly() {
         return "My big wings make me fly!";
     }
 
-
+    public String eatUnicorn(Unicorn unicorn) {
+        belly.add(unicorn);
+        return "Mmmmm bye bye Unicorn!";
+    }
 }
