@@ -18,9 +18,9 @@ public class NonFlyingEnclosure extends Enclosure {
         return name;
     }
 
-    public int checkEnclosure() {
-        return beasts.size();
-    }
+//    public int checkEnclosure() {
+//        return beasts.size();
+//    }
 
     @Override
     public void addBeastToEnclosure(Beast b) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by user on 03/03/2017.
  */
 
-public class Dragon extends Beast{
+public class Dragon extends Beast implements Flyable{
 
 
     public Dragon(String name, int age) {
@@ -31,7 +31,7 @@ public class Dragon extends Beast{
 
     @Override
     public void eat(Edible food) {
-        if(food instanceof Legomen) {
+        if(food instanceof Legomen || food instanceof Unicorn) {
             belly.add(food);
             System.out.println("oh yes my fave!");
         }else{

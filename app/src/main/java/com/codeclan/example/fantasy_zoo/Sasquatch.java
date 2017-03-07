@@ -3,19 +3,17 @@ package com.codeclan.example.fantasy_zoo;
 import java.util.ArrayList;
 
 /**
- * Created by user on 03/03/2017.
+ * Created by user on 07/03/2017.
  */
 
-public class Unicorn extends Beast implements Flyable, Edible{
+public class Sasquatch extends Beast {
 
-    
-    public Unicorn(String name, int age) {
-        super("Yolanda", 8);
+    public Sasquatch (String name, int age) {
+        super("Chewbacca", 98);
         this.name = name;
         this.age = age;
         this.belly = new ArrayList<Edible>();
     }
-
     public String getName() {
         return name;
     }
@@ -30,15 +28,11 @@ public class Unicorn extends Beast implements Flyable, Edible{
 
     @Override
     public void eat(Edible food) {
-        if(food instanceof Apple) {
+        if(food instanceof Chicken || food instanceof Apple) {
             belly.add(food);
-            System.out.println("yummers");
+            System.out.println("haaaaaaaaaaaarrrgh");
         }else{
-            System.out.println("I won't eat this");
+            System.out.println("harrgghh harrgghh harrgghh");
         }
-    }
-
-    public String fly() {
-        return "My magical horn makes me flyyyyyyyy!";
     }
 }

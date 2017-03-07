@@ -21,34 +21,18 @@ public class FlyingEnclosure extends Enclosure {
         return name;
     }
 
-    public int checkEnclosure() {
-        return beasts.size();
-    }
-
-//    public void addFlyingBeastToEnclosure(Beast b) {
-//        return beasts.add(b);
+//    public int checkEnclosure() {
+//        return beasts.size();
 //    }
 
     @Override
     public void addBeastToEnclosure(Beast b) {
-        if(b instanceof Dragon || b instanceof Unicorn) {
+        if(b instanceof Flyable) {
             beasts.add(b);
             System.out.println("Fly Away!");
         }else{
             System.out.println("Sorry you're not equipped to fly!");
         }
     }
-
-//    @Override
-//    public void addToEnclosure(Edible food) {
-//        if(food instanceof Legomen) {
-//            belly.add(food);
-//            System.out.println("oh yes my fave!");
-//        }else{
-//            System.out.println("Give me proper food FFS!");
-//        }
-//    }
-
-
 
 }

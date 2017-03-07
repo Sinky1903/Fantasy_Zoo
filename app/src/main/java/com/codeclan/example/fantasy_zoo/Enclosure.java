@@ -15,23 +15,21 @@ public abstract class Enclosure {
 
     public Enclosure (String name) {
         this.name = name;
-//        this.beasts = new ArrayList<Beast>();
     }
 
+    public int checkEnclosure() {
+        return beasts.size();
+    }
 
-//    public String getName() {
-//        return name;
-//    }
-
-//    public int checkEnclosure() {
-//        return beasts.size();
-//    }
-//
     public void addBeastToEnclosure(Beast b) {
         this.beasts.add(b);
     }
-//
-    public void feedanimals(Edible food) {
+
+    public void removeBeastFromEnclosure(Beast b) {
+        this.beasts.remove(b);
+    }
+
+    public void feedAnimals(Edible food) {
         for (Beast beast : beasts) {
             beast.eat(food);
         }

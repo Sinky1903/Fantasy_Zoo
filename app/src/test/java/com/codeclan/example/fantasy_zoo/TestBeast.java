@@ -14,9 +14,11 @@ public class TestBeast {
     Dragon dragon;
     Unicorn unicorn;
     Werewolf werewolf;
+    Sasquatch sasquatch;
     Legomen legomen;
     Apple apple;
     Heart heart;
+    Chicken chicken;
 
 
     @Before
@@ -25,11 +27,13 @@ public class TestBeast {
         dragon = new Dragon("Bob", 200);
         unicorn = new Unicorn("Yolanda", 8);
         werewolf = new Werewolf("Scott Howard", 17);
+        sasquatch = new Sasquatch("Chewbacca", 98);
         legomen = new Legomen();
         apple = new Apple();
         heart = new Heart();
     }
 
+//    //////////
     @Test
     public void testGetDragonName() {
         assertEquals("Bob", dragon.getName());
@@ -72,6 +76,7 @@ public class TestBeast {
         assertEquals("My big wings make me fly!", dragon.fly());
     }
 
+//    ////////////
     @Test
     public void testGetUnicornName() {
         assertEquals("Yolanda", unicorn.getName());
@@ -114,6 +119,7 @@ public class TestBeast {
         assertEquals("My magical horn makes me flyyyyyyyy!", unicorn.fly());
     }
 
+//    ////////////
     @Test
     public void testGetWerewolfName() {
         assertEquals("Scott Howard", werewolf.getName());
@@ -149,6 +155,45 @@ public class TestBeast {
     public void testWerewolfCantEatLegomen() {
         werewolf.eat(legomen);
         assertEquals(0, werewolf.checkBelly());
+    }
+
+//    ///////////
+
+    @Test
+    public void testGetSasquatchName() {
+        assertEquals("Chewbacca", sasquatch.getName());
+    }
+
+    @Test
+    public void testGetSasquatchAge() {
+        assertEquals(98, sasquatch.getAge());
+    }
+
+    @Test
+    public void testSasquatchCanBreath(){
+        assertEquals("woooooosa", sasquatch.breath());
+    }
+
+    @Test
+    public void testSasquatchCanSleep() {
+        assertEquals("zzzzzz", sasquatch.sleep());
+    }
+
+    @Test
+    public void testSasquatchBellyEmpty() {
+        assertEquals(0, sasquatch.checkBelly());
+    }
+
+    @Test
+    public void testSasquatchCanEatChicken() {
+        sasquatch.eat(chicken);
+        assertEquals(1, sasquatch.checkBelly());
+    }
+
+    @Test
+    public void testSasquatchCantEatLegomen() {
+        sasquatch.eat(legomen);
+        assertEquals(0, sasquatch.checkBelly());
     }
 
 }
