@@ -22,18 +22,22 @@ public abstract class Beast {
     }
 
     public String getName() {
+        System.out.println(name);
         return name;
     }
 
     public int getAge() {
+        System.out.println(age);
         return age;
     }
 
     public String breath() {
+        System.out.println("woooooosa");
         return "woooooosa";
     }
 
     public String sleep() {
+        System.out.println("zzzzzz");
         return "zzzzzz";
     }
 

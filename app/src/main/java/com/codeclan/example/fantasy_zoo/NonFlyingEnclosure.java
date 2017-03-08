@@ -13,14 +13,9 @@ public class NonFlyingEnclosure extends Enclosure {
         this.beasts = new ArrayList<Beast>();
     }
 
-//    public int checkEnclosure() {
-//        return beasts.size();
-//    }
-
     @Override
     public void addBeastToEnclosure(Beast b) {
-        boolean isHairy = b instanceof Hairyable;
-        if(isHairy) {
+        if(b instanceof Hairyable) {
             beasts.add(b);
             System.out.println("Hunt Away!");
         }else{

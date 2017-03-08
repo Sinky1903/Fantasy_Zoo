@@ -30,15 +30,18 @@ public class Dragon extends Beast implements Flyable{
     }
 
     public String attackUnicorn() {
-        return ("Attack pesky Unicorn!!");
-    }
-
-    public String fly() {
-        return "My big wings make me fly!";
+        System.out.println("Attack pesky Unicorn!!");
+        return "Attack pesky Unicorn!!";
     }
 
     public String eatUnicorn(Unicorn unicorn) {
         belly.add(unicorn);
+        System.out.println("Mmmmm bye bye Unicorn!");
         return "Mmmmm bye bye Unicorn!";
+    }
+
+    public String fly() {
+        System.out.println("My big wings make me fly!");
+        return "My big wings make me fly!";
     }
 }

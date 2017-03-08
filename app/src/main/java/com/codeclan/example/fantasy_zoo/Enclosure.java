@@ -13,8 +13,6 @@ public abstract class Enclosure {
     protected ArrayList<Beast> beasts;
 
     public abstract void addBeastToEnclosure(Beast b);
-//        this.beasts.add(b);
-    
     
     public Enclosure (String name) {
         this.name = name;
@@ -35,6 +33,7 @@ public abstract class Enclosure {
     }
 
     public String getName() {
+        System.out.println(name);
         return name;
     }
 }

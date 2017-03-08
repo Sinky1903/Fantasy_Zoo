@@ -29,10 +29,12 @@ public class Unicorn extends Beast implements Flyable, Edible{
     }
 
     public String fly() {
+        System.out.println("My magical horn makes me flyyyyyyyy!");
         return "My magical horn makes me flyyyyyyyy!";
     }
 
     public String fart() {
+        System.out.println("RAINBOW FART");
         return "RAINBOW FART";
     }
 }

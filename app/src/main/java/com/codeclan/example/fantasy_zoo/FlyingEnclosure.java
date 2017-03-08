@@ -16,9 +16,6 @@ public class FlyingEnclosure extends Enclosure {
         this.beasts = new ArrayList<Beast>();
     }
 
-//    public int checkEnclosure() {
-//        return beasts.size();
-//    }
 
     @Override
     public void addBeastToEnclosure(Beast b) {
